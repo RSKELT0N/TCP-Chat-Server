@@ -108,6 +108,10 @@ void Server::handle(Client *client) {
 
         std::string input = std::string(buffer,0,bytes-1);
 
+		if(input[bytes - 1] == '\r') {
+			input = std::string(input.c_str(), 0, bytes - 2);
+		}
+
 
         std::vector<std::string> tokens(split(input,SEPARATOR));
         Command command = getCommand(tokens,client);

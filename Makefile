@@ -3,7 +3,7 @@
 #########################
 CXX      := g++ -std=gnu++14
 TARGET   := server
-CXXFLAGS := -pthread -w
+CXXFLAGS := -pthread -w -g
 DEPFLAGS := -MMD -MF $(@:.o=.d)
 SRC      := src
 BIN      := bin
